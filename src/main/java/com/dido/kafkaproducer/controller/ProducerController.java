@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Random;
-import java.util.UUID;
 
 @RestController
 @RequestMapping(value = "/kafka")
@@ -23,7 +22,7 @@ public class ProducerController {
     private static final String TRANSFER_TOPIC = "kafka-transfer";
 
     @Autowired
-    public ProducerController(KafkaTemplate kafkaTemplate, KafkaTemplate<String, String> stringKafkaTemplate) {
+    public ProducerController(KafkaTemplate kafkaTemplate, KafkaTemplate stringKafkaTemplate) {
         this.kafkaTemplate = kafkaTemplate;
         this.stringKafkaTemplate = stringKafkaTemplate;
     }
